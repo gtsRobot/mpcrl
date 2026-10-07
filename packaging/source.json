@@ -1,0 +1,10 @@
+{
+  "source_directory": "/home/ubuntu22/Private/321/MPC_RL_ZPRL_RTX5090-main",
+  "packaged_on": "2026-10-07",
+  "source_bytes": 9362932710,
+  "copied_files": 468,
+  "excluded_files": 958,
+  "checkpoint_count": 703,
+  "checkpoint_bytes": 9225356705,
+  "policy": "Copy only; original experiment source and results remain unchanged. Core source files are preserved byte-for-byte."
+}

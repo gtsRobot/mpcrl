@@ -1,0 +1,28 @@
+tasks:
+- configs/rtx5090/hopper.yaml
+- configs/rtx5090/walker2d.yaml
+- configs/rtx5090/halfcheetah.yaml
+- configs/rtx5090/reacher.yaml
+methods:
+- mpc_only
+- action_residual
+- planning_residual
+- zprl_style
+seeds:
+- 0
+- 1
+- 2
+- 3
+- 4
+steps: 100000
+eval_episodes: 5
+lewm_configs:
+- configs/rtx5090/lewm_hopper.yaml
+- configs/rtx5090/lewm_walker2d.yaml
+- configs/rtx5090/lewm_halfcheetah.yaml
+- configs/rtx5090/lewm_reacher.yaml
+run_lewm: true
+benchmark_note: >-
+  This is the unified MuJoCo engineering benchmark. It is not a strict numerical
+  reproduction of the official LeWorldModel four-task benchmark (TwoRoom, PushT,
+  Cube, Reacher); the official reference benchmark is handled separately.

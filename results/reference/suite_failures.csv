@@ -1,0 +1,2 @@
+job,env,method,seed,returncode,cmd
+97,reacher,lewm_mpc,1,-9,/home/ubuntu22/anaconda3/envs/mpc_rl_zprl_5090/bin/python -m experiments.train_lewm --config configs/rtx5090/lewm_reacher.yaml --seed 1 --episodes 5

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-07",
+  "unit_tests": {
+    "passed": 66,
+    "failed": 0,
+    "command": "python -m unittest discover -s tests -v"
+  },
+  "copied_files_byte_identical": 468,
+  "python_syntax": "passed",
+  "shell_syntax": "passed",
+  "integration": {
+    "training": "Reacher-v5, 64 collected transitions, 64 RL steps, one eval episode per controller; passed",
+    "paired_checkpoint_evaluation": "Both baseline and RL rollout from the newly saved checkpoint; passed",
+    "existing_paired_checkpoint": "HalfCheetah seed 0 model and actor restored with strict state-dict loading; passed",
+    "existing_standalone_checkpoint": "Reacher seed 0, actual history=1, one evaluation episode; passed",
+    "benchmark_aggregation": "80 runs present, all final-eval rows readable; passed",
+    "paired_aggregation": "Correct archived pair restored, return delta 10.374015729407162; passed",
+    "paired_plotting": "passed; existing mean-of-empty-slice warning on unavailable curve points",
+    "outputs_directory": "/tmp/lewm-package-validation-20261007",
+    "benchmark_plotting": "passed; original plotting emits degrees-of-freedom warnings where curve coverage is insufficient"
+  },
+  "runtime": {
+    "python": "3.11.15",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "gymnasium": "1.3.0",
+    "mujoco": "3.12.0"
+  },
+  "scope": "Packaging and workflow checks only; full-budget retraining and algorithm-protocol fixes were not performed.",
+  "gitignore": "passed"
+}

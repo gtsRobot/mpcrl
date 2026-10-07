@@ -1,0 +1,21 @@
+tasks:
+- configs/rtx5090/lewm_hopper.yaml
+- configs/rtx5090/lewm_walker2d.yaml
+- configs/rtx5090/lewm_halfcheetah.yaml
+- configs/rtx5090/lewm_reacher.yaml
+seeds:
+- 0
+- 1
+- 2
+- 3
+- 4
+rl_steps: 50000
+eval_episodes: 10
+methods:
+- lewm_mpc
+- lewm_mpc_rl
+note: >-
+  Direct paired experiment. For each task/seed, one LeWM and one reward probe
+  are trained once and frozen. The same frozen model, same CEM planner and same
+  deterministic evaluation seeds are used for LeWM-MPC and LeWM-MPC+RL. Only
+  the MPC action is corrected by a bounded SAC residual in the proposed method.

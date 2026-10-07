@@ -1,0 +1,33 @@
+tasks:
+- configs/rtx5090/walker2d.yaml
+- configs/rtx5090/halfcheetah.yaml
+seeds:
+- 0
+- 1
+- 2
+steps: 50000
+eval_episodes: 5
+variants:
+  full: {}
+  no_dagger:
+    zprl_style:
+      dagger_rounds: 0
+      dagger_steps_per_round: 0
+  no_consistency:
+    zprl_style:
+      consistency_coef: 0.0
+  no_latent_residual:
+    zprl_style:
+      residual_scale: 0.0
+  latent_dim_16:
+    zprl_style:
+      latent_dim: 16
+  latent_dim_64:
+    zprl_style:
+      latent_dim: 64
+  residual_scale_half:
+    derived:
+      residual_scale_multiplier: 0.5
+  residual_scale_1p5x:
+    derived:
+      residual_scale_multiplier: 1.5

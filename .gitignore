@@ -1,3 +1,21 @@
+# Generated training outputs and binary model weights stay outside Git history.
+/runs/
+/logs/
+/checkpoints/
+/results/generated/
 __pycache__/
 *.py[cod]
+*.pt
+*.pth
+*.ckpt
+*.log
+*.pid
+*.zip
+*.tar
+*.tar.gz
 .venv/
+.env
+.idea/
+.vscode/
+.DS_Store
+# results/archived_runs and results/reference are intentional versioned evidence.

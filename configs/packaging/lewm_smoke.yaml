@@ -1,0 +1,63 @@
+# Integration smoke test only; not a paper experiment configuration.
+env:
+  id: Reacher-v5
+  seed: 0
+  render_size: 32
+  success_return_threshold: null
+collect:
+  transitions: 64
+lewm:
+  latent_dim: 24
+  hidden_dim: 32
+  sigreg_lambda: 0.001
+  sigreg_projections: 8
+  sigreg_knots: 5
+  batch_size: 16
+  epochs: 1
+  lr: 0.0003
+  encoder: vit
+  predictor: ar_transformer
+  patch_size: 16
+  encoder_depth: 1
+  encoder_heads: 3
+  predictor_depth: 1
+  predictor_heads: 3
+  history: 2
+  sigreg_scale_by_n: true
+reward_probe:
+  epochs: 1
+  lr: 0.001
+mpc:
+  horizon: 2
+  candidates: 8
+  elites: 2
+  iterations: 1
+  init_std: 0.65
+  min_std: 0.04
+  discount: 0.99
+  alpha: 0.2
+  execute: elite_mean
+rl_residual:
+  total_steps: 64
+  random_steps: 16
+  start_steps: 16
+  ramp_steps: 16
+  residual_scale: 0.12
+  replay_capacity: 256
+  batch_size: 16
+  hidden_dim: 32
+  lr: 0.0003
+  gamma: 0.99
+  tau: 0.005
+  init_alpha: 0.1
+  target_entropy_scale: 0.3
+  consistency_coef: 0.05
+  updates_per_step: 1
+  safeguard_mode: 'off'
+eval:
+  episodes: 1
+logging:
+  root: runs
+hardware:
+  precision: fp32
+  require_cuda: false

@@ -1,0 +1,4 @@
+eval_episode,eval_seed,train_seed,method,env,episode_return,episode_length,success,mpc_ms,prediction_mse,uncertainty,residual_norm,effective_residual_norm,gate,residual_ramp,action_d1,action_d2
+0,152000,2,zprl_base,Walker2d-v5,245.42581251050422,131,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.04172546789050102,0.04078105464577675
+1,152001,2,zprl_base,Walker2d-v5,240.8753489546521,126,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.0418403223156929,0.037825774401426315
+2,152002,2,zprl_base,Walker2d-v5,244.81953167659296,130,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.04372064396739006,0.04376168176531792

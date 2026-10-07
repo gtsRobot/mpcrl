@@ -1,0 +1,6 @@
+eval_episode,eval_seed,train_seed,method,env,episode_return,episode_length,success,mpc_ms,prediction_mse,uncertainty,residual_norm,effective_residual_norm,gate,residual_ramp,action_d1,action_d2
+0,304000,4,lewm_mpc,Hopper-v5,54.989935970722065,34,nan,29.491654442287707,nan,nan,nan,nan,nan,nan,0.28575754165649414,0.4868103265762329
+1,304001,4,lewm_mpc,Hopper-v5,51.83826571591686,32,nan,27.772426968112995,nan,nan,nan,nan,nan,nan,0.2146538645029068,0.35275691747665405
+2,304002,4,lewm_mpc,Hopper-v5,52.43738363444037,32,nan,27.88322165815771,nan,nan,nan,nan,nan,nan,0.27210763096809387,0.4643023908138275
+3,304003,4,lewm_mpc,Hopper-v5,53.35527571317311,33,nan,27.906445060525034,nan,nan,nan,nan,nan,nan,0.2572656273841858,0.4237441122531891
+4,304004,4,lewm_mpc,Hopper-v5,47.176626258910154,29,nan,27.905032072810393,nan,nan,nan,nan,nan,nan,0.24562101066112518,0.4103742837905884

@@ -1,0 +1,2 @@
+eval_episode,eval_seed,train_seed,method,env,episode_return,episode_length,success,mpc_ms,prediction_mse,uncertainty,residual_norm,effective_residual_norm,gate,residual_ramp,safeguard_scale,safeguard_gain,action_d1,action_d2,effective_rank
+0,700000,0,lewm_mpc,HalfCheetah-v5,-217.4166536096967,1000,nan,149.61231550006778,0.0056777775608934464,nan,0.0,0.0,0.0,0.0,nan,nan,0.46916764974594116,0.8106797337532043,112.06547546386719

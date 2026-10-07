@@ -1,0 +1,6 @@
+eval_episode,eval_seed,train_seed,method,env,episode_return,episode_length,success,mpc_ms,prediction_mse,uncertainty,residual_norm,effective_residual_norm,gate,residual_ramp,action_d1,action_d2
+0,304000,4,lewm_mpc,Reacher-v5,-13.49286228500917,50,nan,29.879223461612128,nan,nan,nan,nan,nan,nan,0.11441589891910553,0.1944189816713333
+1,304001,4,lewm_mpc,Reacher-v5,-13.429193538620591,50,nan,28.56440848147031,nan,nan,nan,nan,nan,nan,0.11712855845689774,0.20000529289245605
+2,304002,4,lewm_mpc,Reacher-v5,-12.157435758904043,50,nan,28.58768640027847,nan,nan,nan,nan,nan,nan,0.1153399869799614,0.2022327184677124
+3,304003,4,lewm_mpc,Reacher-v5,-12.182183014799842,50,nan,29.12759282218758,nan,nan,nan,nan,nan,nan,0.11659131944179535,0.1958489865064621
+4,304004,4,lewm_mpc,Reacher-v5,-8.71743585249314,50,nan,28.27392589941155,nan,nan,nan,nan,nan,nan,0.11686334758996964,0.21514438092708588

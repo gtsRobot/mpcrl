@@ -1,0 +1,18 @@
+{
+  "env": "HalfCheetah-v5",
+  "seed": 0,
+  "baseline_return_mean": -217.4166536096967,
+  "rl_return_mean": -226.0743043102544,
+  "delta_return": -8.657650700557696,
+  "improvement_pct": -3.982054988344999,
+  "baseline_success_rate": NaN,
+  "rl_success_rate": NaN,
+  "success_rate_delta": NaN,
+  "effective_rank": 112.06547546386719,
+  "shared_world_model": true,
+  "safeguard_mode": "off",
+  "lewm_encoder": "vit",
+  "lewm_predictor": "ar_transformer",
+  "lewm_history": 2,
+  "rl_steps": 300
+}

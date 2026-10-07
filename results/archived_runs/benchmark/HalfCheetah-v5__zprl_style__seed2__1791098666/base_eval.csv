@@ -1,0 +1,6 @@
+eval_episode,eval_seed,train_seed,method,env,episode_return,episode_length,success,mpc_ms,prediction_mse,uncertainty,residual_norm,effective_residual_norm,gate,residual_ramp,action_d1,action_d2
+0,152000,2,zprl_base,HalfCheetah-v5,53.13655056845588,1000,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.4312208890914917,0.6943652033805847
+1,152001,2,zprl_base,HalfCheetah-v5,58.10218749605708,1000,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.42130333185195923,0.6771619319915771
+2,152002,2,zprl_base,HalfCheetah-v5,-131.4813353163438,1000,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.2988109588623047,0.431181937456131
+3,152003,2,zprl_base,HalfCheetah-v5,51.418939585234455,1000,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.4019484519958496,0.6455305218696594
+4,152004,2,zprl_base,HalfCheetah-v5,57.97177087783167,1000,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.41815754771232605,0.6714842319488525

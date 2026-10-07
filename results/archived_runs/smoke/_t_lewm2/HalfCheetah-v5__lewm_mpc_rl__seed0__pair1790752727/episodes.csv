@@ -1,0 +1,2 @@
+global_step,episode,method,env,seed,episode_return,episode_length,success,mpc_ms,prediction_mse,uncertainty,residual_norm,effective_residual_norm,gate,residual_ramp,safeguard_scale,safeguard_gain,action_d1,action_d2,q_loss,actor_loss,alpha
+300,0,lewm_mpc_rl,HalfCheetah-v5,0,-57.697107264851326,300,nan,150.8319863328749,nan,nan,1.3859194970130921,0.20788793340325357,1.0,1.0,nan,nan,0.5575474500656128,0.9767757058143616,nan,nan,nan

@@ -1,0 +1,103 @@
+# Local iteration profile: RTX 5060 Ti 8GB / any single consumer GPU.
+#
+# Sized so a 30k-step run finishes in roughly 10 minutes, which is what makes the
+# Phase-0 diagnostics and the paired protocol usable as a decision loop rather
+# than an overnight job. Measured on a 5060 Ti: 18.3 ms/plan with these settings
+# (vs 162 ms/plan for configs/rtx5090/halfcheetah.yaml).
+#
+# This is NOT the paper configuration. Use configs/rtx5090/*.yaml for that.
+env:
+  id: HalfCheetah-v5
+  seed: 0
+  success_return_threshold: null
+train:
+  total_steps: 30000
+  warmup_steps: 2000
+  wm_update_interval: 250
+  wm_updates: 20
+  batch_size: 512
+  rl_start_steps: 3000
+  # CEM dominates wall-clock, so extra SAC updates are nearly free. At 1 update
+  # per step the critic never converges within the step budget.
+  rl_updates_per_step: 8
+  # Freeze the world model once the residual starts learning, so the residual
+  # faces a stationary MDP and a stationary MPC base policy.
+  wm_freeze_step: 12000
+  final_eval_episodes: 3
+  checkpoint_interval: 5000
+  checkpoint_replay: false
+world_model:
+  ensemble_size: 5
+  hidden_dim: 256
+  lr: 0.001
+  weight_decay: 1.0e-05
+  # NOTE: semantics changed. This is now a coefficient on the cross-member
+  # standard deviation of the *predicted return* (a MOPO-style lower confidence
+  # bound), not on a horizon-averaged one-step variance.
+  uncertainty_penalty: 0.2
+  stats_momentum: 0.99
+  bootstrap_prob: 0.8
+  grad_clip: 10.0
+mpc:
+  horizon: 12
+  candidates: 256
+  elites: 32
+  iterations: 4
+  alpha: 0.2
+  init_std: 0.6
+  min_std: 0.05
+  discount: 0.99
+  # elite_mean is the PETS/TD-MPC convention. best_sample (the previous
+  # behaviour) executes the single highest-scoring sample, which maximises
+  # exploitation of world-model error.
+  execute: elite_mean
+residual:
+  chunk_len: 3
+  residual_scale: 0.2
+  adaptive_gate: true
+  gate_mode: running_zscore
+  gate_momentum: 0.995
+  # <= 0 derives the initial std from the first observed uncertainty instead of a
+  # fixed absolute constant, which matters now that uncertainty is in return units.
+  gate_initial_std: -1
+  gate_relative_initial_std: 0.25
+  gate_z_threshold: 0.0
+  gate_z_temperature: 1.0
+  gate_min: 0.25
+  gate_max: 0.95
+  gate_power: 1.0
+  ramp_steps: 3000
+  fixed_gate: 1.0
+  consistency_coef: 0.02
+  temporal_decay: 0.8
+  # Hold one residual decision for this many env steps so the stored transition
+  # covers a coherent decision and its reward signal is k-step.
+  residual_hold_steps: 3
+  # off | critic | model | model_value
+  # 'model' re-scores with the same objective CEM already maximised and therefore
+  # structurally caps the method at ~= MPC; keep it only as an ablation.
+  safeguard_mode: 'off'
+  safeguard_scales: [1.0, 0.5, 0.25, 0.0]
+  safeguard_min_improvement: 0.0
+sac:
+  hidden_dim: 256
+  lr: 0.0003
+  gamma: 0.99
+  tau: 0.005
+  init_alpha: 0.2
+  # A residual is a correction, not a primary policy: it should converge closer
+  # to deterministic than the standard -act_dim heuristic allows.
+  target_entropy_scale: 0.3
+  critic: dueling
+  terminal_value: true
+  actor_delay: 2
+  target_policy_noise: 0.1
+  trust_region_relative: true
+logging:
+  root: runs
+hardware:
+  precision: bf16
+  allow_tf32: true
+  cudnn_benchmark: true
+  matmul_precision: high
+  require_cuda: false

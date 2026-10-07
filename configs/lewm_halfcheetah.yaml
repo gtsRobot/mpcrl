@@ -1,0 +1,42 @@
+env:
+  id: HalfCheetah-v5
+  seed: 0
+  render_size: 96
+collect:
+  transitions: 12000
+lewm:
+  latent_dim: 192
+  hidden_dim: 256
+  sigreg_lambda: 0.001
+  sigreg_projections: 256
+  sigreg_knots: 17
+  batch_size: 64
+  epochs: 30
+  lr: 0.0003
+  encoder: vit
+  predictor: ar_transformer
+  patch_size: 16
+  encoder_depth: 6
+  encoder_heads: 3
+  predictor_depth: 4
+  predictor_heads: 3
+  history: 2
+  sigreg_scale_by_n: true
+reward_probe:
+  epochs: 20
+  lr: 0.001
+mpc:
+  horizon: 8
+  candidates: 192
+  elites: 24
+  iterations: 3
+  init_std: 0.7
+  min_std: 0.05
+  discount: 0.99
+  alpha: 0.2
+  execute: elite_mean
+eval:
+  episodes: 5
+hardware:
+  precision: bf16
+  require_cuda: true

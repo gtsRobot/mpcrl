@@ -1,0 +1,6 @@
+eval_episode,eval_seed,train_seed,method,env,episode_return,episode_length,success,mpc_ms,prediction_mse,uncertainty,residual_norm,effective_residual_norm,gate,residual_ramp,action_d1,action_d2
+0,153000,3,zprl_base,Reacher-v5,-5.702947482455549,50,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.025079987943172455,0.022578135132789612
+1,153001,3,zprl_base,Reacher-v5,-8.932483206056553,50,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.02459856867790222,0.018465084955096245
+2,153002,3,zprl_base,Reacher-v5,-5.981586728990403,50,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.022002562880516052,0.01866377331316471
+3,153003,3,zprl_base,Reacher-v5,-5.326615733477726,50,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.02561209350824356,0.020530303940176964
+4,153004,3,zprl_base,Reacher-v5,-4.695718803687881,50,nan,nan,nan,nan,0.0,0.0,0.0,0.0,0.014514701440930367,0.006971713155508041

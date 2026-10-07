@@ -1,0 +1,25 @@
+category,env,method,seeds,return_mean,return_std_across_seeds,note
+benchmark,HalfCheetah-v5,action_residual,5,1923.5610497209054,317.6657543320382,
+benchmark,HalfCheetah-v5,mpc_only,5,2456.355828083084,237.62028264631658,
+benchmark,HalfCheetah-v5,planning_residual,5,1909.6690891378987,651.1316669403623,
+benchmark,HalfCheetah-v5,zprl_style,5,203.6839568845798,453.1329692009328,
+benchmark,Hopper-v5,action_residual,5,257.9156895427412,76.64597050328099,
+benchmark,Hopper-v5,mpc_only,5,202.1068111682169,76.20712045531373,
+benchmark,Hopper-v5,planning_residual,5,260.14103701321363,118.64968978481949,
+benchmark,Hopper-v5,zprl_style,5,165.49375791169126,40.05845717589672,
+benchmark,Reacher-v5,action_residual,5,-4.5290158152513404,0.7247205703534313,
+benchmark,Reacher-v5,mpc_only,5,-4.397492585262522,0.6562014282179042,
+benchmark,Reacher-v5,planning_residual,5,-4.354589167579487,0.6641186429906352,
+benchmark,Reacher-v5,zprl_style,5,-5.48366823835766,1.452930353776762,
+benchmark,Walker2d-v5,action_residual,5,275.7782526141329,79.5692763481271,
+benchmark,Walker2d-v5,mpc_only,5,235.9396557322957,57.84203500323373,
+benchmark,Walker2d-v5,planning_residual,5,244.12439973262022,44.63620386920825,
+benchmark,Walker2d-v5,zprl_style,5,280.02632100900456,31.013467889267403,
+lewm_baselines,HalfCheetah-v5,lewm_mpc,5,-136.24598491700655,34.69087988840872,
+lewm_baselines,Hopper-v5,lewm_mpc,5,32.24698919886326,30.045229917153723,
+lewm_baselines,Reacher-v5,lewm_mpc,4,-11.016444625882208,1.7640910572938262,
+lewm_baselines,Walker2d-v5,lewm_mpc,5,81.29573694039806,90.18377587122858,
+lewm_paired,HalfCheetah-v5,lewm_mpc,1,-86.06395016861313,,Single seed: across-seed std unavailable
+lewm_paired,HalfCheetah-v5,lewm_mpc_rl,1,-75.68993443920596,,Single seed: across-seed std unavailable
+smoke,HalfCheetah-v5,lewm_mpc,1,-217.4166536096967,,Single seed: across-seed std unavailable
+smoke,HalfCheetah-v5,lewm_mpc_rl,1,-226.0743043102544,,Single seed: across-seed std unavailable

@@ -1,0 +1,71 @@
+env:
+  id: HalfCheetah-v5
+  seed: 0
+  render_size: 96
+  success_return_threshold: null
+collect:
+  transitions: 3000
+lewm:
+  encoder: vit
+  predictor: ar_transformer
+  latent_dim: 192
+  patch_size: 16
+  encoder_depth: 6
+  encoder_heads: 3
+  predictor_depth: 4
+  predictor_heads: 3
+  history: 2
+  hidden_dim: 256
+  sigreg_lambda: 0.5
+  sigreg_projections: 256
+  sigreg_knots: 17
+  sigreg_scale_by_n: false
+  batch_size: 128
+  epochs: 8
+  lr: 0.0003
+reward_probe:
+  epochs: 6
+  lr: 0.001
+mpc:
+  horizon: 8
+  candidates: 192
+  elites: 24
+  iterations: 3
+  alpha: 0.2
+  init_std: 0.7
+  min_std: 0.05
+  discount: 0.99
+  execute: elite_mean
+rl_residual:
+  total_steps: 4000
+  random_steps: 400
+  start_steps: 400
+  ramp_steps: 1500
+  residual_scale: 0.15
+  replay_capacity: 20000
+  batch_size: 128
+  hidden_dim: 256
+  lr: 0.0003
+  gamma: 0.99
+  tau: 0.005
+  init_alpha: 0.1
+  target_entropy_scale: 0.3
+  consistency_coef: 0.02
+  updates_per_step: 4
+  safeguard_mode: 'off'
+  safeguard_scales:
+  - 1.0
+  - 0.5
+  - 0.25
+  - 0.0
+  safeguard_min_improvement: 0.0
+eval:
+  episodes: 2
+logging:
+  root: runs
+hardware:
+  precision: bf16
+  allow_tf32: true
+  cudnn_benchmark: true
+  matmul_precision: high
+  require_cuda: false

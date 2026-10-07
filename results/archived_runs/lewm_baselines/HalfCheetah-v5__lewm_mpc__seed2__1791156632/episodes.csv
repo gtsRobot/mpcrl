@@ -1,0 +1,6 @@
+global_step,episode,method,env,seed,episode_return,episode_length,success,mpc_ms,prediction_mse,uncertainty,residual_norm,effective_residual_norm,gate,residual_ramp,action_d1,action_d2
+1000,0,lewm_mpc,HalfCheetah-v5,2,-139.74152778836057,1000,nan,29.621987152902875,nan,nan,nan,nan,nan,nan,0.4303010404109955,0.7447751760482788
+2000,1,lewm_mpc,HalfCheetah-v5,2,-128.66712525170107,1000,nan,29.558185953414068,nan,nan,nan,nan,nan,nan,0.44302237033843994,0.7692744135856628
+3000,2,lewm_mpc,HalfCheetah-v5,2,-131.9990176570042,1000,nan,29.529284662014106,nan,nan,nan,nan,nan,nan,0.44010257720947266,0.7622304558753967
+4000,3,lewm_mpc,HalfCheetah-v5,2,-133.3368669697751,1000,nan,29.42167119658552,nan,nan,nan,nan,nan,nan,0.4432900547981262,0.7696548700332642
+5000,4,lewm_mpc,HalfCheetah-v5,2,-131.32020994575456,1000,nan,29.589293808327056,nan,nan,nan,nan,nan,nan,0.4423377513885498,0.7675313949584961

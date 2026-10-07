@@ -1,0 +1,16 @@
+name: mpc_rl_zprl_5090
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - numpy>=1.26
+      - PyYAML>=6.0
+      - gymnasium[mujoco]>=1.0
+      - mujoco>=3.1
+      - pandas>=2.1
+      - matplotlib>=3.8
+      - tensorboard>=2.16
+      - tqdm>=4.66
+# 注意：RTX 5090 的 torch 请按 README 使用 PyTorch CUDA 12.8+ 官方 wheel 单独安装。
